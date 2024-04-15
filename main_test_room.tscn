@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b713qa5djcj77"]
 
 [ext_resource type="ArrayMesh" uid="uid://belre1d3tsbfq" path="res://Assets/Room_new_assets/door.obj" id="4_uwsm0"]
-[ext_resource type="PackedScene" path="res://Assets/Room_new_assets/test_table2_add.glb" id="5_k2x28"]
+[ext_resource type="PackedScene" uid="uid://c0a41piwgix4j" path="res://Assets/Room_new_assets/test_table2_add.glb" id="5_k2x28"]
 [ext_resource type="PackedScene" uid="uid://x72fncwyva8t" path="res://Assets/Room_new_assets/main_room.glb" id="5_n4dec"]
 [ext_resource type="ArrayMesh" uid="uid://ek58ln8rm2wl" path="res://Assets/Room_new_assets/monitor.obj" id="5_urpp7"]
 [ext_resource type="PackedScene" uid="uid://c5fr7k7epacq4" path="res://Assets/Room_new_assets/bed_test.glb" id="5_vos8n"]

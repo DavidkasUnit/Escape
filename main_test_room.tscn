@@ -1,19 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://b713qa5djcj77"]
 
-[ext_resource type="ArrayMesh" uid="uid://mkhnmlj42jtv" path="res://Assets/Room_new_assets/bed.obj" id="3_s67u7"]
 [ext_resource type="ArrayMesh" uid="uid://belre1d3tsbfq" path="res://Assets/Room_new_assets/door.obj" id="4_uwsm0"]
 [ext_resource type="PackedScene" path="res://Assets/Room_new_assets/test_table2_add.glb" id="5_k2x28"]
 [ext_resource type="PackedScene" uid="uid://x72fncwyva8t" path="res://Assets/Room_new_assets/main_room.glb" id="5_n4dec"]
 [ext_resource type="ArrayMesh" uid="uid://ek58ln8rm2wl" path="res://Assets/Room_new_assets/monitor.obj" id="5_urpp7"]
+[ext_resource type="PackedScene" uid="uid://c5fr7k7epacq4" path="res://Assets/Room_new_assets/bed_test.glb" id="5_vos8n"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.651035, -0.0723215, 0.755594, -0.00909743, 0.994636, 0.10304, -0.758993, -0.0739565, 0.646885, 0.555789, 3.83543, 0.894683)
-
-[node name="Bed" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.788305, 0, -1.36219)
-mesh = ExtResource("3_s67u7")
+transform = Transform3D(0.791177, -0.382106, 0.47753, 0.00878593, 0.787824, 0.615838, -0.611525, -0.483041, 0.626665, 0.555789, 5.34481, 0.894683)
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24062, 1.77354, -5.41539)
@@ -27,8 +23,11 @@ mesh = ExtResource("5_urpp7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17743, 1.42383, 1.62099)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.689817, -0.287181, 0.66459, 0.0282725, 0.927948, 0.371637, -0.723431, -0.237572, 0.648233, 4.19824, 4.85524, 4.91333)
+transform = Transform3D(0.689817, -0.287181, 0.66459, 0.0282725, 0.927947, 0.371637, -0.723431, -0.237572, 0.648233, 4.19824, 4.85524, 4.91333)
 fov = 55.0
 
 [node name="main_room" parent="." instance=ExtResource("5_n4dec")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="bed_test" parent="." instance=ExtResource("5_vos8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15427, 0, -3.72397)

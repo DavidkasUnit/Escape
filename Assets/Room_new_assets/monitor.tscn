@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxhqxyqrwdwdf"]
+
+[ext_resource type="PackedScene" uid="uid://jma0i2spmx8l" path="res://Assets/Room_new_assets/Monitor.glb" id="1_qlsiy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v16ec"]
+size = Vector3(0.194458, 0.693115, 0.921875)
+
+[node name="Monitor" type="Node3D"]
+transform = Transform3D(0.999994, 0.000157546, -0.00347417, -0.000199972, 0.999925, -0.0122148, 0.00347199, 0.0122154, 0.999919, -0.189346, 0.504907, 0.378807)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Monitor" parent="StaticBody3D" instance=ExtResource("1_qlsiy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.20001, 0, 0, 0, 1.20001, 0, 0, 0, 1.20001, 0.301248, -0.1188, -0.375588)
+shape = SubResource("BoxShape3D_v16ec")

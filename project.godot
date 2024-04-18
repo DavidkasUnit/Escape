@@ -14,3 +14,7 @@ config/name="Escape"
 run/main_scene="res://main_test_room.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Escape"

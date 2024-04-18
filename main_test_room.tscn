@@ -21,8 +21,8 @@ fov = 55.0
 [node name="main_room" parent="." instance=ExtResource("5_n4dec")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.4, 0, 0, 0)
 
-[node name="Node3D" parent="." instance=ExtResource("4_3mi2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45971, 0, -3.86397)
+[node name="bed" parent="." instance=ExtResource("4_3mi2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46801, -0.0177908, -2.59267)
 
 [node name="Monitor" parent="." instance=ExtResource("5_um4wd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44425, 2, 2)

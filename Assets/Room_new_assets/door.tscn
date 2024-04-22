@@ -1,15 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bojxq17hhklnk"]
+[gd_scene load_steps=5 format=3 uid="uid://kqlmv5sw6osp"]
 
 [ext_resource type="PackedScene" uid="uid://2s81ngq71jmm" path="res://Assets/Room_new_assets/door.glb" id="1_05bkl"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_wfmgp"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_01lua"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nar7c"]
+size = Vector3(1.83496, 3.68188, 1)
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_kyqoo"]
 
 [node name="Door" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_wfmgp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41748, 1.929, 0)
+shape = SubResource("BoxShape3D_nar7c")
 
 [node name="door" parent="StaticBody3D" instance=ExtResource("1_05bkl")]
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="StaticBody3D/door"]
-transform = Transform3D(1.81151, 0, 0, 0, -3.46146, 0, 0, 0, 0.525068, 0.356238, -1.3993, 0)
-shape = SubResource("BoxShape3D_01lua")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaceholderMesh_kyqoo")
+
+[connection signal="mouse_entered" from="StaticBody3D" to="StaticBody3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody3D" to="StaticBody3D" method="_on_mouse_exited"]

@@ -7,5 +7,3 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	scale *= 0.909
 
-
-		

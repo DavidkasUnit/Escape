@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b713qa5djcj77"]
 
-[ext_resource type="PackedScene" uid="uid://d3jhay32tv7s8" path="res://Bed.tscn" id="4_3mi2b"]
+[ext_resource type="PackedScene" uid="uid://3xm0l1f6x2e3" path="res://Bed.tscn" id="4_3mi2b"]
 [ext_resource type="PackedScene" uid="uid://c0a41piwgix4j" path="res://Assets/Room_new_assets/test_table2_add.glb" id="5_k2x28"]
 [ext_resource type="PackedScene" uid="uid://x72fncwyva8t" path="res://Assets/Room_new_assets/main_room.glb" id="5_n4dec"]
-[ext_resource type="PackedScene" uid="uid://bxhqxyqrwdwdf" path="res://Assets/Room_new_assets/monitor.tscn" id="5_um4wd"]
-[ext_resource type="PackedScene" uid="uid://bojxq17hhklnk" path="res://Assets/Room_new_assets/door.tscn" id="5_yutg6"]
+[ext_resource type="PackedScene" uid="uid://dpivym2u2cv3m" path="res://Assets/Room_new_assets/monitor.tscn" id="5_um4wd"]
+[ext_resource type="PackedScene" uid="uid://kqlmv5sw6osp" path="res://Assets/Room_new_assets/door.tscn" id="5_yutg6"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -21,11 +21,11 @@ fov = 55.0
 [node name="main_room" parent="." instance=ExtResource("5_n4dec")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.4, 0, 0, 0)
 
-[node name="Node3D" parent="." instance=ExtResource("4_3mi2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45971, 0, -3.86397)
+[node name="bed" parent="." instance=ExtResource("4_3mi2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46801, -0.0177908, -2.59267)
 
 [node name="Monitor" parent="." instance=ExtResource("5_um4wd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44425, 2, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44425, 2.06619, 2)
 
 [node name="Door" parent="." instance=ExtResource("5_yutg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.0550649, -5.73662)

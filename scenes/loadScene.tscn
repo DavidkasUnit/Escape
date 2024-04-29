@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bclphvtfl8k1k"]
+
+[ext_resource type="Texture2D" uid="uid://b31h3n3luhbn2" path="res://Png/loadBackground.jpg" id="1_56wyt"]
+[ext_resource type="Script" path="res://scripts/LoadScene.gd" id="1_udcn7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LoadBackground" type="Sprite2D" parent="."]
+position = Vector2(579.25, 326.25)
+scale = Vector2(0.904297, 0.76143)
+texture = ExtResource("1_56wyt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_udcn7")
+
+[node name="ProgressLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 316.0
+offset_right = 799.0
+offset_bottom = 474.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="ProgressBarLine" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 408.0
+offset_right = 812.0
+offset_bottom = 481.0
+
+[connection signal="ready" from="Control/ProgressLabel" to="Control" method="_on_progress_label_ready"]
+[connection signal="ready" from="Control/ProgressBarLine" to="Control" method="_on_progress_bar_line_ready"]

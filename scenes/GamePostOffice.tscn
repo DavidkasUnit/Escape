@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://d2st4jym0a3xw"]
+[gd_scene load_steps=29 format=3 uid="uid://d2st4jym0a3xw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_bi66x"]
 [ext_resource type="Texture2D" uid="uid://beaafps462vvc" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Concrete_Plain_1024x1024_roughness.png" id="2_lk8do"]
 [ext_resource type="Texture2D" uid="uid://cgdeasb4y1du4" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_CardboardBoxes_1024x1024_albedo.png" id="3_7nxxi"]
+[ext_resource type="ArrayMesh" uid="uid://cywo6lld1ny2b" path="res://Assets/Blocky_MinimalWarehouse_Pack/Bay_Door_1u.obj" id="4_a6d6u"]
 [ext_resource type="ArrayMesh" uid="uid://cyst8tmgmneoe" path="res://Assets/Blocky_MinimalWarehouse_Pack/CardboardBox_06.obj" id="4_dqbgl"]
 [ext_resource type="Texture2D" uid="uid://cnnfdg1trm8ui" path="res://Png/brick_texture3347.jpg" id="5_nekbf"]
 [ext_resource type="ArrayMesh" uid="uid://daw3rdn42y2oi" path="res://Assets/Blocky_MinimalWarehouse_Pack/Wall_Basic_1u.obj" id="5_pabe3"]
@@ -12,6 +13,8 @@
 [ext_resource type="ArrayMesh" uid="uid://b2i2lpw15m7y2" path="res://Assets/Blocky_MinimalWarehouse_Pack/Shelf_Warehouse_Simple.obj" id="10_wa8j5"]
 [ext_resource type="ArrayMesh" uid="uid://xec1ekeqw55q" path="res://Assets/Blocky_MinimalWarehouse_Pack/Light_Warehouse_01.obj" id="11_r2aki"]
 [ext_resource type="ArrayMesh" uid="uid://bcxtttci4f686" path="res://Assets/Blocky_MinimalWarehouse_Pack/Bay_Frame_1u.obj" id="12_4a1h8"]
+[ext_resource type="Texture2D" uid="uid://bht3jmj02nb38" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Brick_Painted_1024x1024_ao.png" id="12_8o6oy"]
+[ext_resource type="Texture2D" uid="uid://x2v0mbnql5g7" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Door_Rollup_1024x1024_ao.png" id="14_kphxu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3fnbd"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -47,6 +50,12 @@ albedo_texture = ExtResource("5_nekbf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynqrp"]
 albedo_texture = ExtResource("8_vg6jm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lruvp"]
+albedo_texture = ExtResource("12_8o6oy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj73k"]
+albedo_texture = ExtResource("14_kphxu")
 
 [node name="Node3D" type="Node3D"]
 
@@ -329,4 +338,10 @@ mesh = ExtResource("11_r2aki")
 
 [node name="BayFrame1u" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.1803, 0, 0, 0, 1.13851, 0, 0, 0, 2.25742, -20.694, 0.712814, -6.62426)
+material_override = SubResource("StandardMaterial3D_lruvp")
 mesh = ExtResource("12_4a1h8")
+
+[node name="BayDoor1u" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 2.50369, -20.5041, 0.747191, -4.82197)
+material_override = SubResource("StandardMaterial3D_oj73k")
+mesh = ExtResource("4_a6d6u")

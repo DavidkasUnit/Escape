@@ -317,7 +317,6 @@ material_override = SubResource("StandardMaterial3D_dpocg")
 mesh = ExtResource("7_lutlk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallDoorFrame1u"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallDoorFrame1u/StaticBody3D"]
 transform = Transform3D(1.60825, 0, 0, 0, 1.13491, 0, 0, 0, 2.61939, -0.631295, 4.89479, -4.94103)

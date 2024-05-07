@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhcsrxgd2ldjg"]
 
-[ext_resource type="Script" path="res://scenes/monitor_menu.gd" id="1_8i6fh"]
+[ext_resource type="Script" path="res://scripts/monitor_menu.gd" id="1_8i6fh"]
 [ext_resource type="Script" path="res://scenes/Назад.gd" id="2_6xy2q"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_lh3qr"]
@@ -71,6 +71,22 @@ text = "Офіси"
 [node name="Лвл 3" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.481
+anchor_right = 0.576
+anchor_bottom = 0.574
+offset_left = -3.32004
+offset_top = 0.311981
+offset_right = 1.44794
+offset_bottom = -0.951996
+grow_horizontal = 2
+grow_vertical = 2
+text = "Будівництво"
+icon = SubResource("Texture2DRD_lh3qr")
+
+[node name="Лвл 4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.646
 anchor_top = 0.481
 anchor_right = 0.812
@@ -100,22 +116,8 @@ text = "Прийняти
 "
 script = ExtResource("2_6xy2q")
 
-[node name="Лвл 4" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.41
-anchor_top = 0.481
-anchor_right = 0.576
-anchor_bottom = 0.574
-offset_left = -3.32004
-offset_top = 0.311981
-offset_right = 1.44794
-offset_bottom = -0.951996
-grow_horizontal = 2
-grow_vertical = 2
-text = "Будівництво"
-icon = SubResource("Texture2DRD_lh3qr")
-
 [connection signal="pressed" from="Лвл 1" to="." method="_on_лвл_1_pressed"]
+[connection signal="pressed" from="Лвл 2" to="." method="_on_лвл_2_pressed"]
+[connection signal="pressed" from="Лвл 3" to="." method="_on_лвл_3_pressed"]
+[connection signal="pressed" from="Лвл 4" to="." method="_on_лвл_4_pressed"]
 [connection signal="pressed" from="Назад" to="." method="_on_назад_pressed"]
-[connection signal="pressed" from="Лвл 4" to="." method="_on_лвл_1_pressed"]

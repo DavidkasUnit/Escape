@@ -15,4 +15,4 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 		load_new_scene()
 
 func load_new_scene():
-	get_tree().change_scene_to_file("res://scenes/loadScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/monitor_menu.tscn")

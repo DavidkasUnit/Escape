@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://basyn5vp5scub"]
+
+[node name="Test3" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 1162.0
+offset_bottom = 641.0
+text = "lvl3
+"

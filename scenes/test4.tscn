@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cghog67i6oux8"]
+
+[node name="Test4" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 1135.0
+offset_bottom = 644.0
+text = "Lvl4"

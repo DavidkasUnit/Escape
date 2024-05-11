@@ -25,7 +25,8 @@ func _process(delta):
 			get_tree().change_scene_to_file("res://scenes/test3.tscn")
 		if Global.lvl4 == true :
 			get_tree().change_scene_to_file("res://scenes/test4.tscn")	
-
+		else: 
+			get_tree().change_scene_to_file("res://scenes/main_test_room.tscn")	
 
 func _on_progress_label_ready():
 	loading_label = $ProgressLabel 

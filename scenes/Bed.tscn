@@ -19,5 +19,6 @@ shape = SubResource("BoxShape3D_q3y77")
 [node name="bed_test" parent="StaticBody3D" instance=ExtResource("1_r85os")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227187, 0.0276289, -1.16466)
 
+[connection signal="input_event" from="StaticBody3D" to="StaticBody3D" method="_on_input_event"]
 [connection signal="mouse_entered" from="StaticBody3D" to="StaticBody3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StaticBody3D" to="StaticBody3D" method="_on_mouse_exited"]

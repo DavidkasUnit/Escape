@@ -95,7 +95,7 @@ transform = Transform3D(0.995435, -0.0922775, 0.024388, 0.0250686, 0.0062227, -0
 target_position = Vector3(0, -4, 0)
 
 [node name="target_object" type="Marker3D" parent="CharacterBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0816738, 0.220345, -1.15799)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0816738, 0.220345, -1.62234)
 
 [node name="Box" parent="." instance=ExtResource("17_t07kc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148345, 1.78511, -6.01967)

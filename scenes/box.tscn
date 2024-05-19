@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://oyyx8yetm06i"]
+
+[ext_resource type="ArrayMesh" uid="uid://qar8n582f0br" path="res://Assets/Blocky_MinimalWarehouse_Pack/CardboardBox_01.obj" id="1_ahyfq"]
+[ext_resource type="Texture2D" uid="uid://cgdeasb4y1du4" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_CardboardBoxes_1024x1024_albedo.png" id="1_dxxu5"]
+[ext_resource type="Script" path="res://scripts/Interactive.gd" id="1_xh42p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pw73"]
+size = Vector3(0.802979, 0.960022, 2.04041)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0acfd"]
+albedo_texture = ExtResource("1_dxxu5")
+
+[node name="Box" type="RigidBody3D"]
+script = ExtResource("1_xh42p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.58078, 0, 0, 0, 2.18953, 0, 0, 0, 1.0079, -0.009, -0.009, 0)
+shape = SubResource("BoxShape3D_2pw73")
+
+[node name="CardboardBox01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104665, -0.00393248, 0.000553172)
+material_override = SubResource("StandardMaterial3D_0acfd")
+mesh = ExtResource("1_ahyfq")
+skeleton = NodePath("")

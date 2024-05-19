@@ -1,17 +1,18 @@
 extends CharacterBody3D
 
 
-const SPEED = 9.0
-const JUMP_VELOCITY = 8.5
+const SPEED = 8.0
+const JUMP_VELOCITY = 7.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-const SENS = 0.004
+var object = null 
+var cast = null
+const SENS = 0.003
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-
+@onready var ray = $Head/Camera3D/Ray
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -41,5 +42,21 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	move_and_slide()
+	
+	cast = ray.get_collider()
+	
+func action():
+	if cast is Interactive:
+		print('Int')
+		object = cast
+		cast.take($target_object)
+
+func _input(e):
+	if e is InputEventMouseButton:
+		if e.pressed && e.button_index == MOUSE_BUTTON_LEFT:
+			print('yes')
+			action()
+	
+	

@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://d2st4jym0a3xw"]
+[gd_scene load_steps=32 format=3 uid="uid://d2st4jym0a3xw"]
 
+[ext_resource type="Script" path="res://scenes/GamePostOffice.gd" id="1_8nwtm"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_bi66x"]
 [ext_resource type="Texture2D" uid="uid://beaafps462vvc" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Concrete_Plain_1024x1024_roughness.png" id="2_lk8do"]
 [ext_resource type="Texture2D" uid="uid://cgdeasb4y1du4" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_CardboardBoxes_1024x1024_albedo.png" id="3_7nxxi"]
@@ -15,6 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bcxtttci4f686" path="res://Assets/Blocky_MinimalWarehouse_Pack/Bay_Frame_1u.obj" id="12_4a1h8"]
 [ext_resource type="Texture2D" uid="uid://bht3jmj02nb38" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Brick_Painted_1024x1024_ao.png" id="12_8o6oy"]
 [ext_resource type="Texture2D" uid="uid://x2v0mbnql5g7" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Door_Rollup_1024x1024_ao.png" id="14_kphxu"]
+[ext_resource type="PackedScene" uid="uid://oyyx8yetm06i" path="res://scenes/box.tscn" id="17_t07kc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3fnbd"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,6 +34,8 @@ glow_enabled = true
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v4mgu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p22k3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_asgaq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67ooq"]
 albedo_texture = ExtResource("2_lk8do")
@@ -57,7 +61,8 @@ albedo_texture = ExtResource("12_8o6oy")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj73k"]
 albedo_texture = ExtResource("14_kphxu")
 
-[node name="Node3D" type="Node3D"]
+[node name="Game" type="Node3D"]
+script = ExtResource("1_8nwtm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ndoqi")
@@ -71,34 +76,36 @@ transform = Transform3D(1.75829, 0, 0, 0, 1.76587, 0, 0, 0, 1.76587, 0, 2, 3)
 script = ExtResource("1_bi66x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403741, 0)
 mesh = SubResource("CapsuleMesh_v4mgu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.395084, 0)
 shape = SubResource("CapsuleShape3D_p22k3")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01027, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(1.70807, 0, 0, 0, 1.70807, 0, 0, 0, 1.70807, 0, 0.925339, 0)
+transform = Transform3D(0.568734, 0, 0, 0, 0.566293, 0, 0, 0, 0.566293, 0.00704724, 0.125884, 0.0209613)
 fov = 60.3724
+
+[node name="Ray" type="RayCast3D" parent="CharacterBody3D/Head/Camera3D"]
+transform = Transform3D(0.995435, -0.0922775, 0.024388, 0.0250686, 0.0062227, -0.999666, 0.092095, 0.995714, 0.00850759, 0, -0.206523, 0)
+target_position = Vector3(0, -4, 0)
+
+[node name="target_object" type="Marker3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0816738, 0.220345, -1.15799)
+
+[node name="Box" parent="." instance=ExtResource("17_t07kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148345, 1.78511, -6.01967)
+physics_material_override = SubResource("PhysicsMaterial_asgaq")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00298, 0.123596, 11.3353)
 material_override = SubResource("StandardMaterial3D_67ooq")
 use_collision = true
 size = Vector3(50.4746, 1.24719, 81.2608)
-
-[node name="CardboardBox06" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.899889, 1.77154, -6.87874)
-material_override = SubResource("StandardMaterial3D_vw7ww")
-mesh = ExtResource("4_dqbgl")
-
-[node name="BoxBody" type="StaticBody3D" parent="CardboardBox06"]
-transform = Transform3D(0.832529, 0, 0, 0, 0.274094, 0, 0, 0, 0.282696, 0, 0, 0)
-
-[node name="boxCollsion" type="CollisionShape3D" parent="CardboardBox06/BoxBody"]
-transform = Transform3D(2.65336, 0, 0, 0, 0.936209, 0, 0, 0, 2.16067, -0.199703, -0.133639, 0.0168571)
-shape = SubResource("BoxShape3D_ua7ix")
 
 [node name="CardboardBox08" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.899889, 2.77154, 45.1213)
@@ -132,7 +139,7 @@ mesh = ExtResource("5_pabe3")
 [node name="StaticBody3D" type="StaticBody3D" parent="WallBasic1u"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallBasic1u/StaticBody3D"]
-transform = Transform3D(1.60825, 0, 0, 0, 1.13491, 0, 0, 0, 2.61939, -0.631295, 4.89479, -4.94103)
+transform = Transform3D(1.60825, 0, 0, 0, 1.13491, 0, 0, 0, 2.61939, -0.631293, 4.89479, -4.94103)
 shape = SubResource("BoxShape3D_ua7ix")
 
 [node name="WallBasic1u2" type="MeshInstance3D" parent="."]
@@ -319,7 +326,7 @@ mesh = ExtResource("7_lutlk")
 [node name="StaticBody3D" type="StaticBody3D" parent="WallDoorFrame1u"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallDoorFrame1u/StaticBody3D"]
-transform = Transform3D(1.60825, 0, 0, 0, 1.13491, 0, 0, 0, 2.61939, -0.631295, 4.89479, -4.94103)
+transform = Transform3D(1.60825, 0, 0, 0, 1.13491, 0, 0, 0, 2.61939, -0.631294, 4.89479, -4.94103)
 shape = SubResource("BoxShape3D_ua7ix")
 
 [node name="Door01" type="MeshInstance3D" parent="."]

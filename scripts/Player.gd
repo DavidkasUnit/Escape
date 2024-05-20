@@ -47,16 +47,29 @@ func _physics_process(delta):
 	
 	cast = ray.get_collider()
 	
-func action():
+func action_left():
 	if cast is Interactive:
+		if object:
+			object.drop()
 		print('Int')
 		object = cast
 		cast.take($target_object)
+	else:
+		if object:
+			print('push')
+			object.push()
+			object = null
+
+func action_right():
+	if object:
+		object.drop()
+		object = null
 
 func _input(e):
 	if e is InputEventMouseButton:
 		if e.pressed && e.button_index == MOUSE_BUTTON_LEFT:
-			print('yes')
-			action()
+			action_left()
+		if e.pressed && e.button_index == MOUSE_BUTTON_RIGHT:
+			action_right()
 	
 	

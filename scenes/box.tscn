@@ -11,6 +11,8 @@ size = Vector3(0.802979, 0.960022, 2.04041)
 albedo_texture = ExtResource("1_dxxu5")
 
 [node name="Box" type="RigidBody3D"]
+process_mode = 1
+freeze = true
 script = ExtResource("1_xh42p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

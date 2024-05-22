@@ -20,6 +20,8 @@ func drop():
 func push():
 	target = null
 	freeze = false
-	apply_central_impulse(transform.basis.z * -10)
+	var dir = Global.player.head.global_transform.basis.Z
+	dir.y -= 0.2
+	apply_central_impulse(dir * -10)
 
 

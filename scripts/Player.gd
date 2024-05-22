@@ -15,13 +15,18 @@ const SENS = 0.003
 @onready var ray = $Head/Camera3D/Ray
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Global.player = self
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * SENS)
-		camera.rotate_x(-event.relative.y * SENS)
-		
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(90))
+		rotation.y -=event.relative.x * SENS
+		head.rotation.x = clamp(head.rotation.x - event.relative.y * SENS, -1.4 ,1.4)
+
+	#if event is InputEventMouseMotion:
+		#head.rotate_y(-event.relative.x * SENS)
+		#camera.rotate_x(-event.relative.y * SENS)
+		#
+		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(90))
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -35,7 +40,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("a", "d", "w", "s")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (camera.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

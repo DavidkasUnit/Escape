@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://nrva4djtcm1n"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_kvq7s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v4mgu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p22k3"]
+
+[node name="player" type="CharacterBody3D"]
+transform = Transform3D(1.75829, 0, 0, 0, 1.76587, 0, 0, 0, 1.76587, 0, 2, 3)
+script = ExtResource("1_kvq7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403741, 0)
+mesh = SubResource("CapsuleMesh_v4mgu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.395084, 0)
+shape = SubResource("CapsuleShape3D_p22k3")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01027, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(0.568734, 0, 0, 0, 0.566293, 0, 0, 0, 0.566293, 0.00704724, 0.125884, 0.0209613)
+fov = 60.3724
+
+[node name="Ray" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(0.995435, -0.0922775, 0.024388, 0.0250686, 0.0062227, -0.999666, 0.092095, 0.995714, 0.00850759, 0, -0.206523, 0)
+target_position = Vector3(0, -4, 0)
+
+[node name="target_object" type="Marker3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0816738, 0.220345, -1.62234)

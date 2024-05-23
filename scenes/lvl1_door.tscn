@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj1f05vjfoy22"]
+
+[ext_resource type="Texture2D" uid="uid://x2v0mbnql5g7" path="res://Assets/Blocky_MinimalWarehouse_Pack/TEX_Door_Rollup_1024x1024_ao.png" id="1_xu6xk"]
+[ext_resource type="ArrayMesh" uid="uid://cywo6lld1ny2b" path="res://Assets/Blocky_MinimalWarehouse_Pack/Bay_Door_1u.obj" id="2_jnjap"]
+
+[sub_resource type="GDScript" id="GDScript_40tyu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj73k"]
+albedo_texture = ExtResource("1_xu6xk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2oynu"]
+size = Vector3(1, 0.949585, 19.377)
+
+[node name="door" type="StaticBody3D"]
+script = SubResource("GDScript_40tyu")
+
+[node name="BayDoor1u" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 2.50369, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_oj73k")
+mesh = ExtResource("2_jnjap")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.188569, 0.000281121, 7.542e-05, -4.21137e-06, 12.6153, 0.000907308, -1.14447e-05, -0.00921364, 1.24228, -0.284004, 5.77103, -12.5188)
+shape = SubResource("BoxShape3D_2oynu")

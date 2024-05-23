@@ -74,7 +74,13 @@ func _input(e):
 	if e is InputEventMouseButton:
 		if e.pressed && e.button_index == MOUSE_BUTTON_LEFT:
 			action_left()
+			print(Global.active_door)
 		if e.pressed && e.button_index == MOUSE_BUTTON_RIGHT:
 			action_right()
-	
+	if e is InputEventKey:
+		if e.pressed && e.keycode == KEY_F1:
+			if Global.active_door:
+				Global.active_door = false
+			else:
+				Global.active_door = true
 	

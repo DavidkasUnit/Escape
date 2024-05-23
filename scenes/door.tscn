@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyoycmaktcq1g"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_twn77"]
+[ext_resource type="PackedScene" uid="uid://2s81ngq71jmm" path="res://Assets/Room_new_assets/door.glb" id="2_42kix"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nar7c"]
+size = Vector3(1.83496, 3.68188, 1)
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_kyqoo"]
+
+[node name="Door" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_twn77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41748, 1.929, 0)
+shape = SubResource("BoxShape3D_nar7c")
+
+[node name="door" parent="StaticBody3D" instance=ExtResource("2_42kix")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaceholderMesh_kyqoo")
+
+[connection signal="input_event" from="StaticBody3D" to="StaticBody3D" method="_on_input_event"]
+[connection signal="mouse_entered" from="StaticBody3D" to="StaticBody3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody3D" to="StaticBody3D" method="_on_mouse_exited"]

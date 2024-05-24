@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://duya2iubkf0y4"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2i2lpw15m7y2" path="res://Assets/Blocky_MinimalWarehouse_Pack/Shelf_Warehouse_Simple.obj" id="1_jhu24"]
+
+[node name="ShelfWarehouseSimple" type="MeshInstance3D"]
+transform = Transform3D(0.925508, 0, 0, 0, 0.925508, 0, 0, 0, 0.925508, 0, 0, 0)
+mesh = ExtResource("1_jhu24")

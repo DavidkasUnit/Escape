@@ -17,9 +17,14 @@ func _process(delta):
 	progress_bar.value = progress * 100
 
 	if time_passed >= 1.4:
-		get_tree().change_scene_to_file("res://scenes/GamePostOffice.tscn")
-
-
+		if Global.lvl1 == true :
+			get_tree().change_scene_to_file("res://scenes/GamePostOffice.tscn")
+		if Global.lvl2 == true :
+			get_tree().change_scene_to_file("res://scenes/test2.tscn")
+		if Global.lvl3 == true :
+			get_tree().change_scene_to_file("res://scenes/test3.tscn")
+		if Global.lvl4 == true :
+			get_tree().change_scene_to_file("res://scenes/test4.tscn")
 
 func _on_progress_label_ready():
 	loading_label = $ProgressLabel 

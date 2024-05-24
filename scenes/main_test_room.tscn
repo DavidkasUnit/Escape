@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b713qa5djcj77"]
+[gd_scene load_steps=7 format=3 uid="uid://b713qa5djcj77"]
 
+[ext_resource type="Script" path="res://scenes/main_test_room.gd" id="1_fm7od"]
 [ext_resource type="PackedScene" uid="uid://3xm0l1f6x2e3" path="res://scenes/Bed.tscn" id="4_3mi2b"]
 [ext_resource type="PackedScene" uid="uid://c0a41piwgix4j" path="res://Assets/Room_new_assets/test_table2_add.glb" id="5_k2x28"]
 [ext_resource type="PackedScene" uid="uid://x72fncwyva8t" path="res://Assets/Room_new_assets/main_room.glb" id="5_n4dec"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kqlmv5sw6osp" path="res://Assets/Room_new_assets/door.tscn" id="5_yutg6"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_fm7od")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.791177, -0.382106, 0.47753, 0.00878593, 0.787824, 0.615838, -0.611525, -0.483041, 0.626665, 0.555789, 5.34481, 0.894683)

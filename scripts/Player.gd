@@ -51,7 +51,12 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	cast = ray.get_collider()
-	
+func action_open():
+	if cast:
+		if cast.name == 'Switcher':
+			cast.switch()
+	print(cast)
+
 func action_left():
 	if cast is Interactive:
 		if object:
@@ -69,7 +74,7 @@ func action_right():
 	if object:
 		object.drop()
 		object = null
-
+	   
 func _input(e):
 	if e is InputEventMouseButton:
 		if e.pressed && e.button_index == MOUSE_BUTTON_LEFT:
@@ -79,8 +84,6 @@ func _input(e):
 			action_right()
 	if e is InputEventKey:
 		if e.pressed && e.keycode == KEY_F1:
-			if Global.active_door:
-				Global.active_door = false
-			else:
-				Global.active_door = true
+			#action_open()
+			Global.active_door = !Global.active_door
 	

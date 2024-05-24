@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p22k3"]
 
 [node name="player" type="CharacterBody3D"]
-transform = Transform3D(1.75829, 0, 0, 0, 1.76587, 0, 0, 0, 1.76587, 0, 2, 3)
+transform = Transform3D(1.75829, 0, 0, 0, 2.17829, 0, 0, 0, 1.76587, 0, 2, 3)
 script = ExtResource("1_kvq7s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

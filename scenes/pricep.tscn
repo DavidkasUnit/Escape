@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnffwnsm4dnkb"]
+
+[ext_resource type="PackedScene" uid="uid://c86uuraqxsr4e" path="res://Blender/pricep.gltf" id="1_i2tfv"]
+
+[node name="pricep" instance=ExtResource("1_i2tfv")]

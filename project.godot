@@ -23,6 +23,10 @@ Global="*res://scripts/Global.gd"
 
 project/assembly_name="Escape"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_3d_auto_collision_generator/plugin.cfg")
+
 [input]
 
 a={

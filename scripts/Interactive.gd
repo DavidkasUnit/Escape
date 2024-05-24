@@ -10,6 +10,7 @@ func _physics_process(delta):
 
 func take(_target):
 	target = _target
+	print(target)
 	freeze = true
 
 func drop():
@@ -24,4 +25,5 @@ func push():
 	dir.y -= 0.2
 	apply_central_impulse(dir * -10)
 
+\
 

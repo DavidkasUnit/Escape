@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctqd7l6088twc"]
+
+[ext_resource type="ArrayMesh" uid="uid://xec1ekeqw55q" path="res://Assets/Blocky_MinimalWarehouse_Pack/Light_Warehouse_01.obj" id="1_4km7d"]
+
+[node name="LightWarehouse02" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.59421, 18.1869, -6.8364)
+mesh = ExtResource("1_4km7d")
